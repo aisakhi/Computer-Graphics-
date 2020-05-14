@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<style type="text/css">
+    .button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+ 
+}
+
+.button5 {border-radius: 12px;}
+	
+</style>
+<title>
+Assignment 4: Computer Graphic
+</title>
+</head>
+
+<body style="background-color:brown">
+<center>
+<form>
+<input type="button" class="button button5" value="DDA-Line" id="ddaline"/>
+<input type="button" class="button button5" value="MidPointLine" id="line"/>
+<input type="button" class="button button5" value="MidPointCircle" id="circle"/>
+<input type="button" class="button button5" value="MidPointEllipse" id="ellipse"/>
+<input type="button" class="button button5" value="Line" id="priline"/>
+<input type="button" class="button button5" value="Circle" id="pricir"/>
+<input type="button" class="button button5" value="Ellipse" id="priell"/>
+<input type="button" class="button button5" value="clear" id="clear" style="background-color:pink">
+
+</form>
+</center>
+<center>
+<font color="white">
+Instruction: <br/>
+1.Click on one of the buttons to choose what you are going to draw;<br/>
+2.Click on different postions on the canvas;<br/>
+3.Clear the canvas with "clear" button.<br/>
+</font>
+</center>
+<br/>
+<center>
+<canvas id="canvas" width="500" height="500"
+style="border:3px solid #d3d3d3; background-color:white;">
+Your browser does not support the canvas element.
+</canvas>
+</center>
+<script src="midpoint.js"></script>
+
+</body>
+</html>
