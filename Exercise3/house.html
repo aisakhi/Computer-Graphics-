@@ -1,0 +1,96 @@
+<html>
+
+
+<div>
+depth .05<input id="depthSlider" type="range"
+ min=".05" max="3" step="0.1" value="2" />
+ 3
+radius 0.05<input id="radiusSlider" type="range"
+ min="0.05" max="2" step="0.1" value="1" />
+ 2
+</div>
+<div>
+theta -90<input id="thetaSlider" type="range"
+ min="-90" max="90" step="5" value="0" />
+ 90
+phi -90<input id="phiSlider" type="range"
+ min="-90" max="90" step="5" value="0" />
+ 90
+ </div>
+ <div>
+width 0<input id="widthSlider" type="range"
+ min="0" max="20" step="1" value="10" />
+ 20
+height 0<input id="heightSlider" type="range"
+ min="0" max="20" step="1" value="10" />
+ 20
+</div>
+
+<div>
+  Line Co-ordinates: <br>
+  x 100<input type="range" 
+  id="trans" min="100" max="400" value="100" type="range" onchange="transFront(this.value)"/>400
+ 
+  y 100<input type="range" 
+  id="y" min="100" max="400" value="100" type="range" onchange="transyFront(this.value)"/>400
+ 
+   </div>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+	attribute  vec4 vPosition;
+	attribute  vec4 vColor;
+	varying vec4 fColor;
+	attribute vec4 a_position;
+	attribute vec4 a_color;
+
+	uniform mat4 u_matrix;
+	uniform float u_fudgeFactor;
+
+	uniform vec3 theta;
+	uniform mat4 modelViewMatrix;
+	uniform mat4 projectionMatrix;
+
+
+   void main() 
+	{
+	    // Compute the sines and cosines of theta for each of
+	    //   the three axes in one computation.
+
+		vec4 position = u_matrix * a_position;
+		float zToDivideBy = 1.0 + position.z * u_fudgeFactor;
+
+  // Divide x and y by z.
+		gl_Position = vec4(position.xy / zToDivideBy, position.zw);
+	    fColor = vColor;
+	    gl_Position = projectionMatrix*modelViewMatrix*vPosition;
+	
+	} 
+	
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+   
+varying vec4 fColor;
+
+void main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+<script type="text/javascript" src="C:\Users\aishw\OneDrive\Documents\assignments\sem4\COMPUTER GRAPHICS 1\webgl\Common\webgl-utils.js"></script>
+<script type="text/javascript" src="C:\Users\aishw\OneDrive\Documents\assignments\sem4\COMPUTER GRAPHICS 1\webgl\Common\initShaders.js"></script>
+<script type="text/javascript" src="C:\Users\aishw\OneDrive\Documents\assignments\sem4\COMPUTER GRAPHICS 1\webgl\Common\MV.js"></script>
+<script type="text/javascript" src="C:\Desktop\CG\A4\house.js"></script>
+
+<body>
+<canvas id="gl-canvas" width="600" height="600">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+   
+<br/>
+
+</body>
+</html>
