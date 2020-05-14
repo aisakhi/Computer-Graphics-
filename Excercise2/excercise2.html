@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv = "Content-Type" content = "text/html;charset=utf-8">
+<title> Interactive Sierpinski Gasket</title>
+<script type="text/javascript" src="webgl-utils.js"></script>
+<script type="text/javascript" src="initShaders.js"></script>
+<script type="text/javascript" src="MV.js"></script>
+<script type="text/javascript" src="assign2.js"></script>
+<script type="text/javascript"></script>
+
+<div>
+	<p> Number of Points: </p>
+	500<input type="range" min="500" max="5000" value="1000" step ="500" onchange ="updateTextInput(this.value)" id = "myRange">5000
+	<input type ="text" id="numpoints" value=" "><br>
+</div>
+<body>
+
+<div >
+	Select color<input type="color" id="colorpick"name="colorpick"value="#ff0000" oninput="setColor()"><br>
+</div>
+
+<div>
+	Red <input type="text" min="0" max="255" step="1" id="red" value="115">
+	Green<input type="text" min="0" max="255" step="1" id="green" value="0">
+	Blue<input type="text" min="0"max="255" step="1" id="blue" value="162"><br>
+</div>
+<button onclick="Display()" class="normal" id="display" value="Hover">DISPLAY</button>
+<button onclick="Animation()" class="normal"id="animation" value="Hover">Animation</button>
+<button onclick="Clear()" class="normal"id="clear" value="Hover">Clear canvas</button>
+
+
+<div align="center">
+	<canvas id="gl-canvas" width="520" height="520">
+		Oops ... your browser doesn't support the HTML5 canvas element
+	</canvas>
+</div><br>
+Status: <br>
+Number of points: <output id="pts"></output><br>
+Color: Red(<output id="re"></output>)Green(<output id="ge"></output>)Blue(<output id="be"></output>)<br>
+Mode: <output id="ani"></output><output id="dis"></output>
+</body>
+
+</head>
+</html>
