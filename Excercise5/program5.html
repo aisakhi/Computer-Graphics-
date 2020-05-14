@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<style type="text/css">
+    .button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+ 
+}
+
+.button5 {border-radius: 12px;}
+.button4 {
+padding: 10px 20px;
+font-size: 18px;
+}
+.box{
+background-color: white;
+width: 25px;
+}
+	
+</style>
+</head>
+
+<body style="background-color:brown">
+<center>
+<form>
+
+<input type="button" class="button button5" value="Bezier curve" id="cpbezier"/>
+<input type="button" class="button button5" value="Hermite curve" id="cphermite"/>
+<input type="button" class="button button5" value="B-spline curve" id="cpbspline"/>
+<input type="button" class="button button5" value="clear" id="clear" style="background-color:pink"><br>
+
+</form>
+</center>
+<center>
+<font color="white">
+Instruction: <br/>
+1.Click on Bezier curve to draw bezier using canvas primitives;<br/>
+2.Click on Hermite curve to draw Hermite curve(without primitives);<br/>
+3.Click on the canvas to create points and the curve obtained is B-spline curve.;<br/>
+4.Clear the canvas with "clear" button.<br/>
+</font>
+</center>
+<br/>
+<center>
+<canvas id="canvas" width="500" height="500"
+style="border:3px solid #d3d3d3; background-color:white;">
+Your browser does not support the canvas element.
+</canvas>
+</center>
+<script src="C:\Desktop\CG\CG\prog6.js"></script>
+
+
+</body>
+</html>
